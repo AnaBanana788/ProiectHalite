@@ -1,0 +1,18 @@
+Ana-Maria Avram:
+    16.03.2017:
+        -creat proiectul pe github, adaugat ceilalti membrii ai echipei
+        -creat branch-urile de inceput ale proiectului
+    17-18.03.2017:
+        -scris rules.txt(contine sugestii pentru buna functionare a lucrului in echipa) si adaugat in branch-ul rules
+        -adaugat arhiva cu testerul proiectului in branch-ul tester
+        -creat TO_DO.txt si adaugat in branch-ul rules
+
+
+Antonia Nicolaescu:
+
+
+Iulia-Maria Sburlea-Tarnoveanu:
+
+
+Marius Gaman:
+
