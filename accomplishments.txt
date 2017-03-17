@@ -12,7 +12,8 @@ Antonia Nicolaescu:
 
 
 Iulia-Maria Sburlea-Tarnoveanu:
-
+    18.03.2017:
+        -scris coding-style si adaugat in branch-ul rules
 
 Marius Gaman:
 
