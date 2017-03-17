@@ -1,0 +1,5 @@
+-> Respectati regulile de coding style
+-> Anuntati daca nu va puteti termina taskurile in zilele date, precizand si cand/daca le mai puteti termina sau aveti nevoie de ajutor
+-> Asigurati-va ca nu dati commit peste ce au facut alte persoane(fie dand commit in zilele rezervate pentru voi, fie intreband pe cei ce lucreaza la proiect in zilele respective daca au treaba cu branch-ul pe care vreti sa dati comit)
+-> Notati in accomplishments.txt ziua si ce ati facut, cu detalii daca este vorba de implementare de algoritm
+-> Incercati sa faceti si lucruri din TO_DO.txt
