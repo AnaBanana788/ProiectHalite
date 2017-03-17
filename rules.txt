@@ -4,3 +4,4 @@
 -> Notati in accomplishments.txt ziua si ce ati facut, cu detalii daca este vorba de implementare de algoritm
 -> Incercati sa faceti si lucruri din TO_DO.txt
 -> Actualizati TO_DO.txt, daca este nevoie
+-> Incercati sa nu lasati taskuri pentru ziua de sambata pe principiul ca atunci o sa aveti timp sa le faceti pe toate pentru ca este weekend
