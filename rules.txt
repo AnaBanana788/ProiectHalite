@@ -3,3 +3,4 @@
 -> Asigurati-va ca nu dati commit peste ce au facut alte persoane(fie dand commit in zilele rezervate pentru voi, fie intreband pe cei ce lucreaza la proiect in zilele respective daca au treaba cu branch-ul pe care vreti sa dati comit)
 -> Notati in accomplishments.txt ziua si ce ati facut, cu detalii daca este vorba de implementare de algoritm
 -> Incercati sa faceti si lucruri din TO_DO.txt
+-> Actualizati TO_DO.txt, daca este nevoie
