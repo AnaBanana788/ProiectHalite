@@ -1,0 +1,17 @@
+•	Moving all tiles outward from the center of mass for a uniform expansion
+
+•	Building up "attacker" tiles to charge through and bisect groups of enemy tiles
+
+•	Building up "walls" when enemies get close to your perimeter
+
+•	Finding the lowest-strength tile adjacent to your tiles (within some range) and beelining everything nearby towards it to capture as much as possible
+
+•	Move inner (non combat) pieces towards the closest border only looking at 4 directions (no diagonals)
+
+•	In general, don't move unless a piece's strength is 6x its production
+
+•	Take neutral piece with most production / strength. Prefer fighting other players over taking neutral pieces.
+
+•       Moving over high production areas is bad. Moving at all is bad. Movement is a necessary evil.
+
+•	Maps are generally quite imbalanced, your starting zone is usually not as good to expand in as some other points on the map. Expanding strictly in a blob is suboptimal. It’s generally good to have some tunnelling behaviour to reach better spots. Too much tunnelling slows you down and makes your internal pathing inefficient.
