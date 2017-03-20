@@ -1,6 +1,9 @@
 Theory:
     -http://math.mit.edu/~rothvoss/18.304.3PM/Presentations/1-Melissa.pdf
+    -https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
 
 
 Code:
     -http://www.geeksforgeeks.org/greedy-algorithms-set-6-dijkstras-shortest-path-algorithm/
+    -http://www.infoarena.ro/job_detail/144766?action=view-source (cod bazat pe Dijkstra, dar mai rapid)
+    -http://www.infoarena.ro/job_detail/1788046?action=view-source (cod bazat pe Dijkstra, dar mai rapid)
