@@ -8,6 +8,7 @@ Ana-Maria Avram:
         -creat TO_DO.txt si adaugat in branch-ul rules
     21.03.2017:
         -incarcat prima versiune a codului pentru botul meu
+        -facut o prima strategie viabila de mers pe harta
 
 
 Antonia Nicolaescu:
