@@ -1,3 +1,3 @@
-    - De facut rezlvare utilizand algoritmul Dijkstra
-    - De facut rezlvare utilizand algoritmul A star
-    - De facut rezlvare utilizand algoritmul Bellman-Ford
+    - Verificat checker sa fie la zi
+    - Testat versiunea 1 a botului Anei
+    - Invatat Marius sa scrie in accomplisments.txt
