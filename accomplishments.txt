@@ -17,6 +17,8 @@ Antonia Nicolaescu:
 Iulia-Maria Sburlea-Tarnoveanu:
     18.03.2017:
         -scris coding-style si adaugat in branch-ul rules
+    21.03.2017:
+        -am rulat un test pe codul bot-ului incarcat de Ana
 
 Marius Gaman:
         -sa fac fac cucerirea hartii ~200 frame-uri pana la sfarsitul saptamanii
