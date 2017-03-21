@@ -17,7 +17,7 @@ public class FirstStrategy  implements NextMove {
 		 
 		 //daca nu avem ce sa cucerim in jurul nostru
 		 //si nu am lasa destule resurse in urma pentru protectia site-ului, stam
-		 if( gameMap.getSite(location).strength < 2*gameMap.getSite(location).production )
+		 if( gameMap.getSite(location).strength < 20*gameMap.getSite(location).production )
 		 {
 			 return new Move(location,Direction.STILL);
 		 }
