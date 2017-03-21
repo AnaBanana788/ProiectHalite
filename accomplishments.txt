@@ -16,4 +16,4 @@ Iulia-Maria Sburlea-Tarnoveanu:
         -scris coding-style si adaugat in branch-ul rules
 
 Marius Gaman:
-
+        -sa fac fac cucerirea hartii ~200 frame-uri pana la sfarsitul saptamanii
