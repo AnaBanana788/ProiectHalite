@@ -9,6 +9,10 @@ public class MyBot {
         final InitPackage iPackage = Networking.getInit();
         final int myID = iPackage.myID;
         final GameMap gameMap = iPackage.map;
+        
+        //aici actualizam ce versiune de strategie de miscare folosim
+        //acolo, dupa new
+        NextMove movementStrategy = new FirstStrategy();
 
         Networking.sendInit("MyJavaBot");
 
@@ -22,7 +26,7 @@ public class MyBot {
                     final Location location = gameMap.getLocation(x, y);
                     final Site site = location.getSite();
                     if(site.owner == myID) {
-                        moves.add(new Move(location, Direction.randomDirection()));
+                        moves.add(movementStrategy.nextMove(gameMap, location));
                     }
                 }
             }
