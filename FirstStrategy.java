@@ -21,13 +21,10 @@ public class FirstStrategy  implements NextMove {
 		 {
 			 return new Move(location,Direction.STILL);
 		 }
+		 
 		 //altfel, mergem sa ajutam in alta parte
 		 //TO-DO: ne-ar trebui o strategie pentru mers in cazul asta(sa cautam borduri sau ceva)
-		 else
-		 {
-			 Direction direction = Direction.randomDirection();
-			 return new Move(location, direction);
-		 }
+		 return new Move(location, Direction.randomDirection());
 		 
 	}
 
