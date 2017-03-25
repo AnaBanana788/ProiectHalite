@@ -9,12 +9,9 @@ public class MyBot {
         final int myID = iPackage.myID;
         final GameMap gameMap = iPackage.map;
 		
-		Networking.sendInit("MyJavaBot");
+		Networking.sendInit("RambotTheKiller");
 
-		
-		
-		
-        while(true) {
+		while(true) {
             List<Move> moves = new ArrayList<Move>();
 
             Networking.updateFrame(gameMap);
@@ -34,23 +31,19 @@ public class MyBot {
 						
 						
 						final Location[] loc = new Location[4];
-						
-						
+												
                         loc[0] = gameMap.getLocation(location, Direction.EAST);//est
 						loc[1] = gameMap.getLocation(location, Direction.WEST);//vest
 						loc[2] = gameMap.getLocation(location, Direction.SOUTH);//nord
 						loc[3] = gameMap.getLocation(location, Direction.NORTH);//sud
 						
-											
-						
-						
+												
 						final Site[] cub = new Site[4];
 						int ord[] = new int[4];
-						int sw = 0, i, val_min = 0, val_min1 = 0, val_min2 = 0;	
+						int sw = 0, sw2, i, j, val_min = 0, val_min1 = 0, val_min2 = 0, max;	
 						
 						for(i = 0; i < 4; i++)
 							cub[i] = loc[i].getSite();
-						
 						
 						
 						for(i = 0; i < 4; i++)
@@ -65,43 +58,82 @@ public class MyBot {
 							if(sw == 0) 
 							{								// toate site-urile din jur sunt ale mele
 								
-								if(site.strength > 10)
-									/*if( location.y > l/2)
+								if(site.strength > 15){
+									
+									sw2 =0;
+									
+									Location[] pos = new Location[4];
+												
+									pos[0] = gameMap.getLocation(location, Direction.EAST);//est
+									pos[1] = gameMap.getLocation(location, Direction.WEST);//vest
+									pos[2] = gameMap.getLocation(location, Direction.SOUTH);//nord
+									pos[3] = gameMap.getLocation(location, Direction.NORTH);//sud
+									
+									
+									
+									Site[] sit = new Site[4];
+									for(i = 0; i < 4; i++)
+										cub[i] = loc[i].getSite();
+									
+									if(l > r)
+										max = l;
+									else
+										max = r;
+									j = 0;
+									
+									while( (sw2 == 0) && (j < max) )
 									{
-										moves.add(new Move(location, Direction.NORTH));
-										if( location.x > r/2)
+										
+										sit[0] = pos[0].getSite();
+										if(sit[0].owner != myID)
+										{
 											moves.add(new Move(location, Direction.EAST));
+											sw2 = 1;
+										}
 										else
+											pos[0] = gameMap.getLocation(pos[0], Direction.EAST);//est
+										
+																				
+										sit[1] = pos[1].getSite();
+										if(sit[1].owner != myID)
+										{
 											moves.add(new Move(location, Direction.WEST));
+											sw2 = 1;
+										}
+										else
+											pos[1] = gameMap.getLocation(pos[1], Direction.WEST);
+										
+										
+										sit[2] = pos[2].getSite();
+										if(sit[2].owner != myID)
+										{
+											moves.add(new Move(location, Direction.SOUTH));
+											sw2 = 1;
+										}
+										else
+											pos[2] = gameMap.getLocation(pos[2], Direction.SOUTH);
+										
+																				
+										
+										sit[3] = pos[3].getSite();
+										if(sit[3].owner != myID)
+										{
+											moves.add(new Move(location, Direction.NORTH));
+											sw2 = 1;
+										}
+										else
+											pos[3] = gameMap.getLocation(pos[3], Direction.NORTH);
+											
+										j++;
 										
 									}
-									else
-									{
-										moves.add(new Move(location, Direction.SOUTH));
-										if( location.x > r/2)
-											moves.add(new Move(location, Direction.EAST));
-										else
-											moves.add(new Move(location, Direction.WEST));
-									}*/
-								moves.add(new Move(location, Direction.NORTH));
-								if(site.strength > 10*site.production)
-									moves.add(new Move(location, Direction.EAST));
-								/*
-								{
-								site.direct++;// o sa modific astfel incat sa se duca unde e nevoie de ajutor
-								if( site.direct % 4 == 0)
+									
+									if(j == max)
 									moves.add(new Move(location, Direction.NORTH));
-								else
-									if( site.direct % 4 == 1)
-										moves.add(new Move(location, Direction.EAST));
-									else
-										if( site.direct % 4 == 2)
-											moves.add(new Move(location, Direction.SOUTH));
-										else
-											moves.add(new Move(location, Direction.WEST));
+								
 								}
-								else
-									moves.add(new Move(location, Direction.STILL));*/
+									
+								
 							}
 							else
 							{
