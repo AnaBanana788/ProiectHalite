@@ -1,38 +1,31 @@
-package prjHalite;
-
 import java.util.ArrayList;
+public class GameMap{
 
-public class GameMap {
-	
-	private final Site[][] contents;
+    private final Site[][] contents;
     private final Location[][] locations;
     public final int width, height;
-    
-    public GameMap(int width, int height, int[][] productions) 
-    {
+
+    public GameMap(int width, int height, int[][] productions) {
+
         this.width = width;
         this.height = height;
         this.contents = new Site[width][height];
         this.locations = new Location[width][height];
 
-        for (int y = 0; y < height; y++) 
-        {
-            for(int x = 0; x < width; x++) 
-            {
+        for (int y = 0; y < height; y++) {
+            for(int x = 0; x < width; x++) {
                 final Site site = new Site(productions[x][y]);
                 contents[x][y] = site;
                 locations[x][y] = new Location(x, y, site);
             }
         }
     }
-    
-    public boolean inBounds(Location loc) 
-    {
+
+    public boolean inBounds(Location loc) {
         return loc.x < width && loc.x >= 0 && loc.y < height && loc.y >= 0;
     }
 
-    public double getDistance(Location loc1, Location loc2) 
-    {
+    public double getDistance(Location loc1, Location loc2) {
         int dx = Math.abs(loc1.x - loc2.x);
         int dy = Math.abs(loc1.y - loc2.y);
 
@@ -41,9 +34,8 @@ public class GameMap {
 
         return dx + dy;
     }
-    
-    public double getAngle(Location loc1, Location loc2) 
-    {
+
+    public double getAngle(Location loc1, Location loc2) {
         int dx = loc1.x - loc2.x;
 
         // Flip order because 0,0 is top left
@@ -59,10 +51,8 @@ public class GameMap {
         return Math.atan2(dy, dx);
     }
 
-    public Location getLocation(Location location, Direction direction) 
-    {
-        switch (direction) 
-        {
+    public Location getLocation(Location location, Direction direction) {
+        switch (direction) {
             case STILL:
                 return location;
             case NORTH:
@@ -77,38 +67,26 @@ public class GameMap {
                 throw new IllegalArgumentException(String.format("Unknown direction %s encountered", direction));
         }
     }
-    
-    public Site getSite(Location loc, Direction dir) 
-    {
+
+    public Site getSite(Location loc, Direction dir) {
         return getLocation(loc, dir).getSite();
     }
 
-    public Site getSite(Location loc) 
-    {
+    public Site getSite(Location loc) {
         return loc.getSite();
     }
 
-    public Location getLocation(int x, int y) 
-    {
+    public Location getLocation(int x, int y) {
         return locations[x][y];
     }
-    
-    public int getOwner(Location loc, Direction dir) {
-        Location l = getLocation(loc, dir);
-        return locations[l.getX()][l.getY()].getSite().owner;
-}
-    
-    void reset() 
-    {
-        for (int y = 0; y < height; y++) 
-        {
-            for (int x = 0; x < width; x++) 
-            {
+
+    void reset() {
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
                 final Site site = contents[x][y];
                 site.owner = 0;
                 site.strength = 0;
             }
         }
     }
-
 }

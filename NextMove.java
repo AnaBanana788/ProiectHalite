@@ -1,5 +1,3 @@
-package prjHalite;
-
 public interface NextMove{
 	
 	//interfata ca sa imi fie usor sa modific strategiiile de deplasare

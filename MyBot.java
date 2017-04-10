@@ -1,5 +1,3 @@
-package prjHalite;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,9 +7,7 @@ public class MyBot {
         final InitPackage iPackage = Networking.getInit();
         final int myID = iPackage.myID;
         final GameMap gameMap = iPackage.map;
-        
-        //aici actualizam ce versiune de strategie de miscare folosim
-        //acolo, dupa new
+
         NextMove movementStrategy = new FirstStrategy();
 
         Networking.sendInit("MyJavaBot");

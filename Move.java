@@ -1,14 +1,9 @@
-package prjHalite;
-
 public class Move {
-	
-	public Location loc;
-	public Direction dir;
+    public Location loc;
+    public Direction dir;
 
-	public Move(Location loc, Direction dir) 
-	{
-		this.loc = loc;
-	    this.dir = dir;
-	}
-
+    public Move(Location loc_, Direction dir_) {
+        loc = loc_;
+        dir = dir_;
+    }
 }

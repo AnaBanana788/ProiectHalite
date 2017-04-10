@@ -1,5 +1,3 @@
-package prjHalite;
-
 import java.util.Arrays;
 
 public class FirstStrategy  implements NextMove {
@@ -17,15 +15,21 @@ public class FirstStrategy  implements NextMove {
 		 
 		 //daca nu avem ce sa cucerim in jurul nostru
 		 //si nu am lasa destule resurse in urma pentru protectia site-ului, stam
-		 if( gameMap.getSite(location).strength < 20*gameMap.getSite(location).production )
+		 if( gameMap.getSite(location).strength < 10*gameMap.getSite(location).production )
 		 {
 			 return new Move(location,Direction.STILL);
 		 }
 		 
 		 //altfel, mergem sa ajutam in alta parte
 		 //TO-DO: ne-ar trebui o strategie pentru mers in cazul asta(sa cautam borduri sau ceva)
-		 return new Move(location, Direction.randomDirection());
-		 
+		 Direction dir = Direction.randomDirection();
+
+		 if(dir == Direction.NORTH)
+		 	dir = Direction.SOUTH;
+		 if(dir == Direction.WEST)
+		 	dir = Direction.EAST;
+
+		 return new Move(location,dir);
 	}
 
 }

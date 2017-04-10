@@ -1,5 +1,3 @@
-package prjHalite;
-
 import java.net.*;
 import java.io.*;
 import java.util.ArrayList;
@@ -105,7 +103,7 @@ public class Networking {
         InitPackage initPackage = new InitPackage();
         initPackage.myID = (int)Integer.parseInt(getString());
 
-        // De-serialize width and height:
+        // Deserialize width and height:
         final String[] inputStringComponents = getString().split(" ");
 
         int width = Integer.parseInt(inputStringComponents[0]);
