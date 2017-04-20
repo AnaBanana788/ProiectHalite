@@ -9,6 +9,8 @@ Ana-Maria Avram:
     21.03.2017:
         -incarcat prima versiune a codului pentru botul meu
         -facut o prima strategie viabila de mers pe harta
+    26.03.2017:
+        -am pus pe github si celelalte 2 strategii de mers pe harta(testate de mine si Iulia), desi niciuna nu ajunge la viteza celei facute de Marius
     20.04.2017:
         -incarcat primele doua versiuni ale codului pentru etapa a doua
         -scris comentarii la cele doua versiuni mentionate mai sus
@@ -23,6 +25,9 @@ Iulia-Maria Sburlea-Tarnoveanu:
         -scris coding-style si adaugat in branch-ul rules
     21.03.2017:
         -am rulat un test pe codul bot-ului incarcat de Ana
+    26.03.2017:
+        -am compus fisierul README.docx pentru arhiva proiectului
 
 Marius Gaman:
+        -scris cod pentru bot-ul meu
         -sa fac fac cucerirea hartii ~200 frame-uri pana la sfarsitul saptamanii
