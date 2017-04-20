@@ -9,6 +9,10 @@ Ana-Maria Avram:
     21.03.2017:
         -incarcat prima versiune a codului pentru botul meu
         -facut o prima strategie viabila de mers pe harta
+    20.04.2017:
+        -incarcat primele doua versiuni ale codului pentru etapa a doua
+        -scris comentarii la cele doua versiuni mentionate mai sus
+        -facut update la cele doua versiuni mentionate mai sus(aveau erori la rularea checkerului pentru etapa 1, si nu reuseau sa acopere hartile 30x30 si 40x40; acum nu mai dau erori deloc)
 
 
 Antonia Nicolaescu:
