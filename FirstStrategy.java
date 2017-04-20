@@ -1,35 +1,86 @@
-import java.util.Arrays;
-
 public class FirstStrategy  implements NextMove {
 
 	@Override
 	public Move nextMove(GameMap gameMap, Location location) {
 		// TODO Auto-generated method stub
 		
-		//verific daca e vreo casuta libera in jurul pozitiei mele actuale pe care o pot cuceri
-		 for (Direction direction : Arrays.asList(Direction.CARDINALS))
-			 if( (gameMap.getSite(location, direction).owner != gameMap.getSite(location).owner) && (gameMap.getSite(location, direction).strength < gameMap.getSite(location).strength) )
-			 {
-			 	return new Move(location, direction);
-			 }
-		 
-		 //daca nu avem ce sa cucerim in jurul nostru
-		 //si nu am lasa destule resurse in urma pentru protectia site-ului, stam
-		 if( gameMap.getSite(location).strength < 10*gameMap.getSite(location).production )
-		 {
-			 return new Move(location,Direction.STILL);
-		 }
-		 
-		 //altfel, mergem sa ajutam in alta parte
-		 //TO-DO: ne-ar trebui o strategie pentru mers in cazul asta(sa cautam borduri sau ceva)
-		 Direction dir = Direction.randomDirection();
-
-		 if(dir == Direction.NORTH)
-		 	dir = Direction.SOUTH;
-		 if(dir == Direction.WEST)
-		 	dir = Direction.EAST;
-
-		 return new Move(location,dir);
+		final Site currSite = gameMap.getSite(location);
+		Direction enemyDir = null;
+		double bestHeuristic = -1.0;
+		boolean isOnBorder = false;
+		
+		//cautam cea mai buna directie in care sa mergem sa ocupam o "casuta" cu ajutorul euristicii
+		for( Direction direction: Direction.CARDINALS) 
+		{
+			Site neighbour = gameMap.getSite(location, direction);
+			
+			if( neighbour.owner != currSite.owner )
+			{
+				isOnBorder = true;
+				if( heuristics(neighbour) > bestHeuristic )
+				{
+					enemyDir = direction;
+					bestHeuristic = heuristics(neighbour);
+				}
+			}
+		}
+		
+		//daca suntem la marginea taramlui nostru si putem cuceri ce e in directia data, cucerim
+		if( (isOnBorder) && (gameMap.getSite(location, enemyDir).strength < currSite.strength) )
+		{
+			return new Move(location, enemyDir);
+		}
+		
+		//10-le e testat prin incercari, a nu se modifica
+		if (currSite.strength < (10 * currSite.production)) 
+		{
+	        return new Move(location, Direction.STILL);
+	    }
+		
+		//daca suntem in interiorul taramului nostru, ne indreptam spre cel mai apropiat inamic
+		if (!isOnBorder)
+		{
+			return new Move(location, findClosestEnemyDirection(gameMap, location));
+		}
+			
+		return new Move(location, Direction.STILL);
 	}
+	
+	//Euristica stupida
+	private double heuristics(Site site)
+	{
+		if (site.production > 0)
+			return (site.production*1.0)/site.strength;
+		return (site.production*1.0);
+	}
+	
+	//Caut prima casuta care nu ne apartine in fiecare directie si o retin pe cea mai apropiata
+	private Direction findClosestEnemyDirection(GameMap gameMap, Location location)
+	{
+		final Site currSite = gameMap.getSite(location);
+		int minDistance = Math.min(gameMap.width, gameMap.height) / 2;
+		Direction returnDirection = Direction.EAST;
+		
+		for( Direction direction: Direction.CARDINALS)
+		{
+			int distance = 0;
+			Location currloc = location;
+			Site site = gameMap.getSite(currloc, direction);
+			while (site.owner == currSite.owner && distance < minDistance)
+			{
+				distance++;
+				currloc = gameMap.getLocation(currloc, direction);
+				site = gameMap.getSite(currloc);
+			}
 
+			if (distance < minDistance)
+			{
+				returnDirection = direction;
+				minDistance = distance;
+			}
+		}
+		
+		return returnDirection;
+	}
+	
 }
