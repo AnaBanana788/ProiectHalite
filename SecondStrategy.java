@@ -1,4 +1,4 @@
-public class FirstStrategy  implements NextMove {
+public class SecondStrategy implements NextMove{
 
 	@Override
 	public Move nextMove(GameMap gameMap, Location location) {
@@ -17,26 +17,27 @@ public class FirstStrategy  implements NextMove {
 			if( neighbour.owner != currSite.owner )
 			{
 				isOnBorder = true;
-				if( heuristics(neighbour) > bestHeuristic )
+				double currHeuristic = heuristics(gameMap, neighbour, gameMap.getLocation(location, direction), currSite.owner);
+				if( currHeuristic > bestHeuristic )
 				{
 					enemyDir = direction;
-					bestHeuristic = heuristics(neighbour);
+					bestHeuristic = currHeuristic;
 				}
 			}
 		}
 		
-		//Daca suntem la marginea taramlui nostru si putem cuceri ce e in directia data, cucerim
+		//Daca suntem la marginea taramlui nostru si putem cuceri ce e in directia data, cucerim	
 		if( (isOnBorder) && (gameMap.getSite(location, enemyDir).strength < currSite.strength) )
 		{
 			return new Move(location, enemyDir);
 		}
-		
+			
 		//10-le e testat prin incercari, a nu se modifica
 		if (currSite.strength < (10 * currSite.production)) 
 		{
 	        return new Move(location, Direction.STILL);
 	    }
-		
+			
 		//Daca suntem in interiorul taramului nostru, ne indreptam spre cel mai apropiat inamic
 		if (!isOnBorder)
 		{
@@ -46,12 +47,26 @@ public class FirstStrategy  implements NextMove {
 		return new Move(location, Direction.STILL);
 	}
 	
-	//Euristica stupida
-	private double heuristics(Site site)
+	//Euristica ceva mai avansata
+	private double heuristics(GameMap gameMap, Site site, Location location, int myId)
 	{
-		if (site.production > 0)
-			return (site.production*1.0)/site.strength;
-		return (site.production*1.0);
+		//Daca casuta la care suntem e neutra, facem euristica stupida
+		if (site.owner == 0 && site.strength > 0) 
+		{
+			return (site.production*1.0) / site.strength;
+		}
+		//Altfel, calculam cu cat trebuie sa atacam inamicii astfel incat sa facem "overkill"(parca??; ala de pierd si casutele adiacente viata)
+		else 
+		{
+			double neededStrength = 0;
+			for( Direction direction: Direction.CARDINALS) 
+			{
+				final Site neighbour = gameMap.getSite(location, direction);
+				if (neighbour.owner != 0 && neighbour.owner != myId) 
+					neededStrength += neighbour.strength;
+			}
+			return neededStrength;
+		}
 	}
 	
 	//Caut prima casuta care nu ne apartine in fiecare directie si o retin pe cea mai apropiata
@@ -67,6 +82,7 @@ public class FirstStrategy  implements NextMove {
 			Location currLoc = location;
 			Site site = gameMap.getSite(currLoc, direction);
 			
+			//Stim sigur ca owner la currSite suntem noi(ca altfel nu intram pe cazul asta)
 			while (site.owner == currSite.owner && distance < minDistance)
 			{
 				distance++;
@@ -83,5 +99,5 @@ public class FirstStrategy  implements NextMove {
 		
 		return returnDirection;
 	}
-	
+
 }
