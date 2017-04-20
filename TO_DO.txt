@@ -1,3 +1,2 @@
-    - Verificat checker sa fie la zi
-    - Testat versiunea 1 a botului Anei
-    - Invatat Marius sa scrie in accomplisments.txt
+    - Testat primele 2 versiuni
+    - Scris mai multe versiuni
