@@ -1,5 +1,16 @@
 Theory:
     -https://en.wikipedia.org/wiki/A*_search_algorithm
+    (Pentru euristici simpli)
+    -https://en.wikipedia.org/wiki/Heuristic_(computer_science)
+    -http://study.com/academy/lesson/heuristics.html
+    -http://students.ceid.upatras.gr/~papagel/project/kef5_5.htm
+    -https://www.quora.com/What-is-the-heuristic-approach-algorithm-in-computer-science
+    -http://stackoverflow.com/questions/21537028/whats-the-difference-between-greedy-and-heuristic-algorithm
+    -http://stackoverflow.com/questions/21537028/whats-the-difference-between-greedy-and-heuristic-algorithm
+    -https://optimization.mccormick.northwestern.edu/index.php/Heuristic_algorithms
+    -http://www.indiana.edu/~p1013447/dictionary/alg_heur.htm
+    -https://faisalsikder.wordpress.com/2010/02/15/difference-between-algorithm-and-heuristic/
+    -http://theory.stanford.edu/~amitp/GameProgramming/Heuristics.html
 
 
 Code:
