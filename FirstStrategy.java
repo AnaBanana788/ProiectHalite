@@ -31,8 +31,10 @@ public class FirstStrategy  implements NextMove {
 			return new Move(location, enemyDir);
 		}
 		
-		//10-le e testat prin incercari, a nu se modifica
-		if (currSite.strength < (10 * currSite.production)) 
+        //Nu putem lasa o patratica cu productie mare fara aparare
+        //Nu putem astepta ca o patratica cu productie mica sa ajunga la o limita de strength
+		//5-le e testat si prin incercari, a nu se modifica
+		if (currSite.strength < (5 * currSite.production))
 		{
 	        return new Move(location, Direction.STILL);
 	    }
