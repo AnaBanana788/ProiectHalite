@@ -15,6 +15,11 @@ Ana-Maria Avram:
         -incarcat primele doua versiuni ale codului pentru etapa a doua
         -scris comentarii la cele doua versiuni mentionate mai sus
         -facut update la cele doua versiuni mentionate mai sus(aveau erori la rularea checkerului pentru etapa 1, si nu reuseau sa acopere hartile 30x30 si 40x40; acum nu mai dau erori deloc)
+    24.04-25.04.2017:
+        -modificat cod in speranta ca o sa mearga checkerul
+    26.04.2017:
+        -decoperit si rezolvat problema incompatibilitatii botului de Linux cu OSX
+        -finisat versiunile strategiilor(scris comentarii si verificat coding style)
 
 
 Antonia Nicolaescu:
@@ -27,7 +32,19 @@ Iulia-Maria Sburlea-Tarnoveanu:
         -am rulat un test pe codul bot-ului incarcat de Ana
     26.03.2017:
         -am compus fisierul README.docx pentru arhiva proiectului
+    24.04-25.04.2017:
+        -testat cod de la Ana
+    26.04.2017:
+        -descoperit si rezolvat problema cu simbolul de Override 
+        -testat versiunile strategiilor
+        -stabilit cea mai eficienta strategie
+
 
 Marius Gaman:
         -scris cod pentru bot-ul meu
         -sa fac fac cucerirea hartii ~200 frame-uri pana la sfarsitul saptamanii
+     20.04-25.04.2017:
+        -lucrat la versiunea mea de bot
+     26.04.2017:
+        -imbunatatit codul scris de fete
+        -stabilit cea mai eficienta strategie
